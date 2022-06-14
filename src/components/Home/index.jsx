@@ -5,12 +5,12 @@ const Home = () => {
   const [palette, setPalette] = useState([]);
   const [filterInput, setfilterInput] = useState("");
   if (!filterInput&&!palette.length) {
-    fetch("http://localhost:8080/sorvetes")
+    fetch("https://projeto4api.herokuapp.com/sorvetes")
       .then(res => res.json())
       .then(setPalette)
       .catch(err => console.log(err));
   } else if (filterInput) {
-  fetch(`http://localhost:8080/sorvetes?search=${filterInput}`)
+  fetch(`https://projeto4api.herokuapp.com/sorvetes?search=${filterInput}`)
     .then(res => res.json())
     .then(setPalette)
     .catch(err => console.log(err));

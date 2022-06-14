@@ -18,7 +18,7 @@ const Header = () => {
     setEditing(false);
     console.log(newPalette);
     fetch(
-      `http://localhost:8080/sorvetes`,
+      `https://projeto4api.herokuapp.com/sorvetes`,
       { method: "POST", body: JSON.stringify(newPalette), headers: { "Content-Type": "application/json" } }
     )
       .then(response => response.json())

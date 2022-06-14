@@ -14,7 +14,7 @@ const Card = ({ palette }) => {
     e.preventDefault();
     setEditing(false);
     fetch(
-      `http://localhost:8080/sorvetes/${palette._id}`,
+      `https://projeto4api.herokuapp.com/sorvetes/${palette._id}`,
       { method: "PUT", body: JSON.stringify(newPalette), headers: { "Content-Type": "application/json" } }
     )
   }
@@ -27,7 +27,7 @@ const Card = ({ palette }) => {
       </div>
       <h3>{name}</h3>
       <p>{description}</p>
-      <button onClick={() => fetch(`http://localhost:8080/sorvetes/${palette._id}`, { method: 'DELETE'})}> Deletar </button>
+      <button onClick={() => fetch(`https://projeto4api.herokuapp.com/sorvetes/${palette._id}`, { method: 'DELETE'})}> Deletar </button>
       <button onClick={() => setEditing(true)}> Editar </button>
     </div>
   );
